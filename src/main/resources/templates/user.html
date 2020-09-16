@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User lists</title>
+</head>
+<body>
+<table>
+    <tr th:each="user : ${user}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+    </tr>
+</table>
+<div th:text="|현재 페이지 : ${user.number}|"></div>
+<div th:text="|총 페이지 : ${user.totalPages}|"></div>
+<div th:text="|페이지 당 개수 : ${user.numberOfElements}|"></div>
+<div th:text="|총 개수 : ${user.totalElements}|"></div>
+<div th:text="|이전 페이지 여부 : ${user.hasPrevious()}|"></div>
+<div th:text="|다음 페이지 여부 : ${user.hasNext()}|"></div>
+
+</body>
+</html>
